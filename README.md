@@ -21,49 +21,149 @@ Lucide Icons	SVG icons for navigation (menu, close)
 File Structure
 Everything lives in a single index.html file. Here's the logical breakdown:
 
+
+# Project Architecture
+
+## Structure Overview
+
+```text
 index.html
 │
-├── <head>
-│ ├── Meta tags (charset, viewport)
-│ ├── CDN links (Tailwind, Fonts, Lucide)
-│ ├── Import Map (Three.js module resolution)
-│ └── <style> block
-│ ├── CSS Custom Properties (color system tokens)
-│ ├── Base resets and body styles
-│ ├── Component styles (glass-card, neon-text, skill-tag, etc.)
-│ ├── Animation keyframes (fadeUp, pulse-soft)
-│ ├── Scroll-reveal classes (.skill-group, .edu-item, etc.)
-│ ├── Responsive breakpoints
-│ └── Accessibility (prefers-reduced-motion)
+├── Head Section
+│   ├── Meta Tags
+│   │   ├── charset
+│   │   └── viewport
+│   ├── CDN Links
+│   │   ├── Tailwind CSS
+│   │   ├── Google Fonts
+│   │   └── Lucide Icons
+│   ├── Import Map
+│   │   └── Three.js Module Resolution
+│   └── Style Block
+│       ├── CSS Custom Properties
+│       ├── Base Styles & Resets
+│       ├── UI Components
+│       │   ├── Glass Cards
+│       │   ├── Neon Text
+│       │   └── Skill Tags
+│       ├── Animation Keyframes
+│       ├── Scroll-Reveal Effects
+│       ├── Responsive Breakpoints
+│       └── Accessibility Settings
 │
-├── <body>
-│ ├── #canvas-container ← Three.js <canvas> (fixed, behind everything)
-│ ├── .overlay ← All portfolio content above the 3D scene
-│ │ ├── <nav> ← Fixed top bar: logo, links, mobile hamburger
-│ │ ├── #hero ← Name, tagline, model selector dots
-│ │ ├── #about ← Bio + skill tags + animated stats
-│ │ ├── #work ← Project cards with images, tags, links
-│ │ ├── #education ← Timeline + achievement card
-│ │ ├── #contact ← Email, LinkedIn, GitHub links
-│ │ └── <footer> ← Copyright
-│ ├── #mobile-menu ← Full-screen overlay menu for small screens
-│ ├── #toast ← Floating notification pill
-│ └── <script type="module"> ← All Three.js and interaction logic
-│ ├── Scene, Camera, Renderer
-│ ├── Bloom post-processing
-│ ├── OrbitControls (auto-rotate, drag, zoom)
-│ ├── Lighting (ambient + 2 point + 1 directional)
-│ ├── Reflective floor (Reflector + dark overlay + grid)
-│ ├── Hexagonal pedestal (solid + neon edges + glow ring)
-│ ├── Glass frame (translucent box + neon edges + bright top)
-│ ├── Hologram system (GLSL shaders + 5 swappable geometries)
-│ ├── Floating particles (250 points, rising drift)
-│ ├── Raycasting (hover detection)
-│ ├── Scroll-reveal observers
-│ ├── Mobile menu toggle
-│ ├── Smooth scrolling
-│ ├── Resize handler
-│ └── Animation loop (60fps)
+├── Body Section
+│   ├── #canvas-container
+│   │   └── Three.js WebGL Scene
+│   │
+│   ├── .overlay
+│   │   ├── Navigation Bar
+│   │   │   ├── Logo
+│   │   │   ├── Navigation Links
+│   │   │   └── Mobile Menu Button
+│   │   │
+│   │   ├── Hero Section
+│   │   │   ├── Name & Title
+│   │   │   ├── Introduction
+│   │   │   └── Model Selector
+│   │   │
+│   │   ├── About Section
+│   │   │   ├── Biography
+│   │   │   ├── Skills
+│   │   │   └── Statistics
+│   │   │
+│   │   ├── Work Section
+│   │   │   ├── Project Cards
+│   │   │   ├── Technologies
+│   │   │   └── Project Links
+│   │   │
+│   │   ├── Education Section
+│   │   │   ├── Timeline
+│   │   │   └── Achievements
+│   │   │
+│   │   ├── Contact Section
+│   │   │   ├── Email
+│   │   │   ├── LinkedIn
+│   │   │   └── GitHub
+│   │   │
+│   │   └── Footer
+│   │
+│   ├── #mobile-menu
+│   │   └── Full-Screen Mobile Navigation
+│   │
+│   └── #toast
+│       └── Notification System
+│
+└── JavaScript Module
+    ├── Three.js Scene Setup
+    │   ├── Scene
+    │   ├── Camera
+    │   └── Renderer
+    │
+    ├── Post Processing
+    │   └── Bloom Effects
+    │
+    ├── Controls
+    │   └── OrbitControls
+    │
+    ├── Lighting System
+    │   ├── Ambient Light
+    │   ├── Point Lights
+    │   └── Directional Light
+    │
+    ├── Environment
+    │   ├── Reflective Floor
+    │   ├── Hexagonal Pedestal
+    │   └── Glass Frame
+    │
+    ├── Hologram Engine
+    │   ├── GLSL Shaders
+    │   └── 5 Swappable Models
+    │
+    ├── Particle System
+    │   └── 250 Floating Particles
+    │
+    ├── Interaction System
+    │   ├── Raycasting
+    │   ├── Hover Detection
+    │   └── Model Selection
+    │
+    ├── UI Features
+    │   ├── Scroll Reveal
+    │   ├── Mobile Menu
+    │   └── Smooth Scrolling
+    │
+    ├── Event Handlers
+    │   └── Window Resize
+    │
+    └── Animation Loop
+        └── 60 FPS Rendering
+```
+
+## Technologies Used
+
+* HTML5
+* CSS3
+* Tailwind CSS
+* JavaScript (ES6 Modules)
+* Three.js
+* WebGL
+* GLSL Shaders
+* OrbitControls
+* EffectComposer & Bloom Pass
+* Lucide Icons
+
+## Features
+
+* Interactive 3D Hologram Portfolio
+* Real-Time WebGL Rendering
+* Bloom & Neon Effects
+* Responsive Design
+* Smooth Scrolling Navigation
+* Scroll-Reveal Animations
+* Mobile-Friendly Menu
+* Particle Effects
+* Raycasting Interaction
+* Modern Glassmorphism UI
 
 text
 
